@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
 
    def index
-        render json: LineItem.all status: :ok
+        render json: LineItem.all, status: :ok
     end
 
     def show

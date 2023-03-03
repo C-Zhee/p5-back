@@ -1,50 +1,45 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
-    rescue_from ActiveRecord::RecordInvalid, with: :invalid_credentials
+    APP_SECRET ='yay'
+    before_action :authenticate, only: [:show, :me]
+    
+    def me 
+        render json: {user: @current_user}, status: 200
+    end
+    
     def index 
-        users = User.all 
-        render json: users
-    end 
-
-    def show 
-        user = find_user 
-        render json: user 
-    end 
-
-    def create 
-        user = User.create!(user_params)
-        
-        token = encode_token({user_id: user.id})
-        render json: {user: UserSerializer.new(user), jwt: token}, status: :created
-        
+         render json: User.all, status: 200
     end
 
-    def update 
-        user = find_user 
-        user.update!(user_params)
-    end 
-
-    def destroy
-        user = find_user 
-        user.destroy
-        head :no_content
-    end 
-
-    def name
-        # user = User.find_by(id: decode_token[0]['user_id'])
-        render json: current_user.to_json(only: [:first_name]), status: :ok
+    def show
+        # puts @current_user
+        user = User.find_by!(id: params[:id])
+        if @current_user.id == user.id
+            render json: {user: user}, status: 200
+        else 
+            render json: {error: 'This aint you'}, status: 401
+        end
     end
 
-    private
-    def find_user
-        user = User.find(params[:id])
+    def login 
+        user = User.find_by(email: params[:email])
+        if user && user.authenticate(params[:password])
+            # encode token and send it back
+            token = JWT.encode({user_id: user.id, username: user.username}, APP_SECRET, 'HS256')
+            #above is the important line
+            render json: {user:user, token: token}, status: 200
+        else 
+            render json: {error: 'invalid email or password'}, status: 422
+        end
     end
-
-    def user_params 
-        params.permit(:username, :password, :first_name, :last_name, :email)
+    def create
+        user = User.new(email: params[:email], password: params[:password])
+        if user.save
+            # create token here
+            render json: {user: user, token: token}, status: 200 
+            # there are no params above purposly because we are not passing in the value, which requires params
+        else 
+            render json: {error: user.errors.full_messages[0], status: 422}
+        end
     end
-
-    def invalid_credentials(error)
-        render json: {errors: error.record.errors.full_messages}, status: :unprocessable_entity
-    end
+    
 end
