@@ -3,7 +3,6 @@ class CreateAlbums < ActiveRecord::Migration[7.0]
     create_table :albums do |t|
       t.integer :album_id
       t.string :album_name
-      t.string :album_description
       t.string :release_date 
       t.string :album_image
 
