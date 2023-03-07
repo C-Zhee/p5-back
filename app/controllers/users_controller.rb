@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
             # encode token and send it back
-            token = JWT.encode({user_id: user.id, username: user.username}, APP_SECRET, 'HS256')
+            token = JWT.encode({user_id: user.id, user_name: user.user_name}, APP_SECRET, 'HS256')
             #above is the important line
             render json: {user:user, token: token}, status: 200
         else 

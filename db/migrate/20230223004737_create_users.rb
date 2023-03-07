@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :last_name, null: false
       t.string :user_name, null: false
       t.string :password_digest, null: false
+      t.integer :age, null: false
 
       t.string :email, null: false
 
