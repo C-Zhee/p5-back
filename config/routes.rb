@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :line_items, only: [:index, :show]
   resources :products, only: [:index, :show, :create]
   resources :carts, only: [:index, :show, :update]
-  resources :albums, only: [:index, :show]
+  resources :albums, only: [:index, :show, :create]
   resources :favorites, only: [:index, :show]
   # resources :users
 
