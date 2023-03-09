@@ -48,9 +48,10 @@ Album.create!(album_id: 14, album_name: "New Year", release_date: "January 1, 20
 
 
 #User
-User.create!(first_name: "Teyla", last_name: "GoodGirl", user_name: "Teyla1", email: "123@gmail.com", password: "z12345", user_age: 20 )#1
+User.create!(first_name: "Joey", last_name: "Bonavoot", user_name: "FlataJoey", email: "123@gmail.com", password: "z12345", user_age: 20 )#1
 User.create!(first_name: "Teyla", last_name: "GoodBoy", user_name: "Teyla12" , email: "1234@gmail.com", password: "z12345" , user_age: 22)#2
 User.create!(first_name: "Rock", last_name: "Grass", user_name: "Rock1" , email: "rock@gmail.com", password: "z12345", user_age: 25 )#3
+User.create!(first_name: "Joey", last_name: "Bonavoot", user_name: "Joey_Baby_69", email: "JoeyB@gmail.com", password: "z12345", user_age: 26) #4
 
 #Cart
 Cart.create!(user_id: 1, sub_total: 1)

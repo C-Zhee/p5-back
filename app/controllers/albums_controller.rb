@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
         render json: album, status: :created
         
     end
-    
+
     def destroy
         album = Album.find(params[:id])
         album.destroy

@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   resources :line_items, only: [:index, :show]
   resources :products, only: [:index, :show, :create]
   resources :carts, only: [:index, :show, :update]
-  resources :albums, only: [:index, :show, :create]
+  resources :albums
   resources :favorites, only: [:index, :show]
   # resources :users
 
-  
+   
+  get '/item/:id', to: 'products#show'
+
   root to: 'users#index'
   get '/users', to: 'users#index'
   get '/me', to: 'users#me'

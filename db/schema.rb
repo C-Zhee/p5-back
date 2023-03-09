@@ -44,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_071536) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "product_id"
     t.string "product_name"
     t.string "product_description"
     t.string "product_image"
