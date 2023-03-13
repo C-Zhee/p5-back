@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::API
+
+    include ActionController::Cookies
+    
     APP_SECRET ='yay'
     def authenticate
         # puts request.headers['Authorization']

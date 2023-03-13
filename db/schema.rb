@@ -14,7 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_071536) do
   create_table "albums", force: :cascade do |t|
     t.integer "album_id"
     t.string "album_name"
-    t.string "album_description"
     t.string "release_date"
     t.string "album_image"
     t.datetime "created_at", null: false
@@ -45,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_071536) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "product_id"
     t.string "product_name"
     t.string "product_description"
     t.string "product_image"
@@ -57,12 +55,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_071536) do
 
   create_table "users", force: :cascade do |t|
     t.integer "user_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "user_name"
-    t.string "password_digest"
-    t.string "email"
-    t.integer "phone_number"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "user_name", null: false
+    t.string "password_digest", null: false
+    t.integer "user_age", null: false
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

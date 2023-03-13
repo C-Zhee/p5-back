@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Products
-Product.create!(product_name: "Key chain", product_description: "accessory", product_image:"https://cdn.11street.com/review/02200202/2743383735/cc2c7ee6bda340c585604c7c0701d026.jpg", product_price: 15  product_quantity: 5 ) 
+Product.create!(product_name: "Key chain", product_description: "accessory", product_image:"https://cdn.11street.com/review/02200202/2743383735/cc2c7ee6bda340c585604c7c0701d026.jpg", product_price: 15,  product_quantity: 5 )
 Product.create!(product_name: "Pin Badge Set", product_description: "accessory", product_image:"https://cdn.clipkit.co/tenants/542/item_images/images/000/164/638/medium/c488444d-a28b-4e06-9e22-8f306d38c93c.jpg", product_price:15,  product_quantity: 5 )
 Product.create!(product_name: "Sticker Set", product_description: "stationary", product_image:"https://pbs.twimg.com/media/EW1-ef2UwAMnqH4?format=jpg", product_price:10,  product_quantity: 5 )
 Product.create!(product_name: "NA Tour T-Shirt", product_description: "clothing", product_image:"https://pbs.twimg.com/media/FiGLjaQUcAAiKJS?format=jpg", product_price:30,  product_quantity: 5 )
@@ -20,7 +20,7 @@ Product.create!(product_name: "Beaker Collection Sweater", product_description: 
 Product.create!(product_name: "Beaker Collection Hoodie (Cream)", product_description: "clothing", product_image:"https://i.redd.it/rtkm6aln9ku91.jpg", product_price:50,  product_quantity: 5 )
 Product.create!(product_name: "Beaker Collection Hoodie (Grey)", product_description: "clothing", product_image:"https://img.ssfshop.com/god_god_evl/23/01/29/67282455513747.jpg", product_price:50,  product_quantity: 5 )
 Product.create!(product_name: "Beaker Collection Tote Bag", product_description: "clothing", product_image:"https://img.ssfshop.com/god_god_evl/22/10/21/78748302399368.jpeg", product_price:20,  product_quantity: 5 )
-Product.create!(product_name: "3 Piece Candle", product_description: "", product_image:"http://hoonyseoul.com/web/product/big/20200219/cbd16de58c27da66027045beb8891d0a.jpg", product_price:10,  product_quantity: 5 )
+Product.create!(product_name: "3 Piece Candle", product_description: "other", product_image:"http://hoonyseoul.com/web/product/big/20200219/cbd16de58c27da66027045beb8891d0a.jpg", product_price:10,  product_quantity: 5 )
 # Product.create!(product_name: "", product_description: "", product_image:"", product_price: )
 # Product.create!(product_name: "", product_description: "", product_image:"", product_price: )
 # Product.create!(product_name: "", product_description: "", product_image:"", product_price: )
@@ -48,8 +48,10 @@ Album.create!(album_id: 14, album_name: "New Year", release_date: "January 1, 20
 
 
 #User
-User.create!(first_name: "Teyla", last_name: "GoodGirl", user_name: "Teyla1", email: "123@gmail.com", password: "z12345")#1
-User.create!(first_name: "Teyla", last_name: "GoodBoy", user_name: "Teyla12", email: "1234@gmail.com", password: "z12345")#1
+User.create!(first_name: "Joey", last_name: "Bonavoot", user_name: "FlataJoey", email: "123@gmail.com", password: "z12345", user_age: 20 )#1
+User.create!(first_name: "Teyla", last_name: "GoodBoy", user_name: "Teyla12" , email: "1234@gmail.com", password: "z12345" , user_age: 22)#2
+User.create!(first_name: "Rock", last_name: "Grass", user_name: "Rock1" , email: "rock@gmail.com", password: "z12345", user_age: 25 )#3
+User.create!(first_name: "Joey", last_name: "Bonavoot", user_name: "Joey_Baby_69", email: "JoeyB@gmail.com", password: "z12345", user_age: 26) #4
 
 #Cart
 Cart.create!(user_id: 1, sub_total: 1)
@@ -57,4 +59,7 @@ Cart.create!(user_id: 1, sub_total: 1)
 
 #Line ITEM 
 LineItem.create!(product_id: 1, cart_id:1, product_quantity: 2)
+
 # LineItem.create!(product_id: 2, cart_id:1)
+
+puts "seeding done"
