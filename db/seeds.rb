@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Products
-Product.create!(product_name: "Key chain", product_description: "accessory", product_image:"https://cdn.11street.com/review/02200202/2743383735/cc2c7ee6bda340c585604c7c0701d026.jpg", product_price: 15,  product_quantity: 5 ) 
+Product.create!(product_name: "Key chain", product_description: "accessory", product_image:"https://cdn.11street.com/review/02200202/2743383735/cc2c7ee6bda340c585604c7c0701d026.jpg", product_price: 15,  product_quantity: 5 )
 Product.create!(product_name: "Pin Badge Set", product_description: "accessory", product_image:"https://cdn.clipkit.co/tenants/542/item_images/images/000/164/638/medium/c488444d-a28b-4e06-9e22-8f306d38c93c.jpg", product_price:15,  product_quantity: 5 )
 Product.create!(product_name: "Sticker Set", product_description: "stationary", product_image:"https://pbs.twimg.com/media/EW1-ef2UwAMnqH4?format=jpg", product_price:10,  product_quantity: 5 )
 Product.create!(product_name: "NA Tour T-Shirt", product_description: "clothing", product_image:"https://pbs.twimg.com/media/FiGLjaQUcAAiKJS?format=jpg", product_price:30,  product_quantity: 5 )

@@ -1,12 +1,13 @@
 class AlbumsController < ApplicationController
     
     def index
-        render json: Album.all, status: :ok
+        album =  Album.all
+        render json: album
     end
 
     def show
         album = Album.find(params[:id])
-        render json: album, status: :ok
+        render json: album
     end
 
      def create 

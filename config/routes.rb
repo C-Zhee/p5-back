@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # resources :users
 
    
-  get '/item/:id', to: 'products#show'
+  # get '/item/:id', to: 'products#show'
 
   root to: 'users#index'
   get '/users', to: 'users#index'
